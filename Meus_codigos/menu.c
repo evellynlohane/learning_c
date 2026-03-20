@@ -1,40 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <locale.h>
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
+    int op = 1;
 
-    int op;
+    while (op != 0) {
+        printf("\n--- MENU DE QUESTÕES (Digite 0 para sair) ---\n");
+        printf("Escolha uma opção (1 a 3): ");
+        scanf("%d", &op);
 
-    printf("--- MENU DE EXERCÍCIOS ---\n");
-    printf("1 - Questão 01\n");
-    printf("2 - Questão 02\n");
-    printf("3 - Questão 03\n");
-    printf("--------------------------\n");
-    printf("Escolha uma opção (1 a 3): ");
-    scanf("%d", &op);
-
-    switch (op) {
-        case 1:
-            printf("\nQuestão 01.\n");
-            // Aqui você pode colar a lógica da sua questão 1
+        if (op == 0) {
+            printf("Saindo do programa...\n");
             break;
+        }
 
-        case 2:
-            printf("\nQuestão 02.\n");
-            // Aqui você pode colar a lógica da sua questão 2
-            break;
-
-        case 3:
-            printf("\nQuestão 03.\n");
-            // Aqui você pode colar a lógica da sua questão 3
-            break;
-
-        default:
-            printf("\nOpção inválida! Escolha um número entre 1 e 3.\n");
-            break;
+        switch (op) {
+            case 1:
+                printf("\nExecutando Questão 01...\n");
+                break;
+            case 2:
+                printf("\nExecutando Questão 02...\n");
+                break;
+            case 3:
+                printf("\nExecutando Questão 03...\n");
+                break;
+            default:
+                printf("\nOpção inválida! Tente novamente.\n");
+        }
     }
-
-    printf("\nPrograma finalizado.\n");
     return 0;
 }
